@@ -1,7 +1,6 @@
 #![no_std]
 #![no_main]
 
-use embedded_graphics::mock_display::ColorMapping;
 use embedded_hal::digital::InputPin;
 // use embedded_hal::digital::{InputPin, OutputPin};
 use panic_halt as _;
