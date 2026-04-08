@@ -1,0 +1,12 @@
+[build]
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+runner = "elf2uf2-rs -d"
+rustflags = [
+  "-Clinker=rust-lld",
+  "-Clink-arg=-Tlink.x",
+]
+
+[unstable]
+build-std = ["core", "compiler_builtins"]

@@ -1,0 +1,31 @@
+[package]
+name = "hello_rust"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.5"
+panic-halt = "1.0.0"
+usb-device = "0.3.2"
+rp2040-hal = "0.11.0"
+usbd-serial = "0.2.2"
+embedded-hal = "1.0.0"
+vcc-gnd-yd-rp2040 = "0.6.0"
+ssd1306 = "0.10.0"
+display-interface-i2c = "0.5.0"
+fugit = "0.3.7"
+embedded-graphics = "0.8.0"
+heapless = "0.9.1"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[package.metadata.cargo-embed]
+linker-script = "memory.x"
